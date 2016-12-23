@@ -69,8 +69,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 960,
-      "height": 640
+      "width": 1152,
+      "height": 720
     },
     "_children": [
       {
@@ -86,8 +86,8 @@
     "_scaleY": 1,
     "_position": {
       "__type__": "cc.Vec2",
-      "x": 480,
-      "y": 320
+      "x": 576,
+      "y": 360
     },
     "_skewX": 0,
     "_skewY": 0,
@@ -317,8 +317,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 240,
-      "height": 40
+      "width": 480,
+      "height": 80
     },
     "_children": [],
     "_rotationX": 0,
@@ -328,7 +328,7 @@
     "_position": {
       "__type__": "cc.Vec2",
       "x": 0,
-      "y": 100
+      "y": 200
     },
     "_skewX": 0,
     "_skewY": 0,
@@ -355,9 +355,9 @@
     },
     "_enabled": true,
     "_useOriginalSize": false,
-    "_actualFontSize": 40,
-    "_fontSize": 40,
-    "_lineHeight": 40,
+    "_actualFontSize": 80,
+    "_fontSize": 80,
+    "_lineHeight": 80,
     "_enableWrapText": true,
     "_N$file": null,
     "_isSystemFontUsed": true,
@@ -389,8 +389,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 400,
-      "height": 50
+      "width": 800,
+      "height": 80
     },
     "_children": [],
     "_rotationX": 0,
@@ -443,8 +443,8 @@
     "_N$returnType": 0,
     "_N$inputFlag": 5,
     "_N$inputMode": 6,
-    "_N$fontSize": 30,
-    "_N$lineHeight": 40,
+    "_N$fontSize": 50,
+    "_N$lineHeight": 80,
     "_N$fontColor": {
       "__type__": "cc.Color",
       "r": 0,
@@ -453,7 +453,7 @@
       "a": 255
     },
     "_N$placeholder": "输入昵称...",
-    "_N$placeholderFontSize": 25,
+    "_N$placeholderFontSize": 50,
     "_N$placeholderFontColor": {
       "__type__": "cc.Color",
       "r": 127.5,
@@ -496,8 +496,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 100,
-      "height": 50
+      "width": 200,
+      "height": 100
     },
     "_children": [
       {
@@ -511,7 +511,7 @@
     "_position": {
       "__type__": "cc.Vec2",
       "x": 0,
-      "y": -200
+      "y": -250
     },
     "_skewX": 0,
     "_skewY": 0,
@@ -555,8 +555,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 100,
-      "height": 40
+      "width": 200,
+      "height": 80
     },
     "_children": [],
     "_rotationX": 0,
@@ -593,8 +593,8 @@
     },
     "_enabled": true,
     "_useOriginalSize": false,
-    "_actualFontSize": 20,
-    "_fontSize": 20,
+    "_actualFontSize": 40,
+    "_fontSize": 40,
     "_lineHeight": 40,
     "_enableWrapText": false,
     "_N$file": null,
@@ -709,6 +709,9 @@
     "_enabled": true,
     "btnConfirm": {
       "__id__": 16
+    },
+    "nickEditBox": {
+      "__id__": 10
     }
   },
   {
@@ -721,8 +724,8 @@
     "_enabled": true,
     "_designResolution": {
       "__type__": "cc.Size",
-      "width": 960,
-      "height": 640
+      "width": 1152,
+      "height": 720
     },
     "_fitWidth": false,
     "_fitHeight": true
@@ -737,8 +740,8 @@
     "_enabled": true,
     "maxSize": {
       "__type__": "cc.Size",
-      "width": 1136,
-      "height": 768
+      "width": 1280,
+      "height": 864
     }
   },
   {
