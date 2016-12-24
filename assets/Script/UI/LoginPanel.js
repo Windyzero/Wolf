@@ -1,11 +1,14 @@
 var StringUtil = require('StringUtil')
+var Connection = require('Connection')
+var UserData = require('UserData')
 
 cc.Class({
     extends: cc.Component,
 
     properties: {
         btnConfirm: cc.Button,
-        nickEditBox: cc.EditBox
+        nickEditBox: cc.EditBox,
+        conn: Connection
     },
 
     // use this for initialization
@@ -16,18 +19,17 @@ cc.Class({
     onTextChanged: function(text, editbox, customEventData){
         text = StringUtil.trim(text);
 
-//        console.log(text);
         if(text.length > 0){
-//            console.log("length over 0");
             this.btnConfirm.interactable = true;
         }else{
-//            console.log("length less 0");
             this.btnConfirm.interactable = false;
         }
     },
 
     onBtnClicked: function(event, customEventData){
-        var text = this.nickEditBox.string;
-        console.log('nickname: ' + text);
+        var text = StringUtil.trim(this.nickEditBox.string);
+        this.nickEditBox.string = text;
+        UserData.nickName = text;
+        this.conn.startConnection();
     },
 });

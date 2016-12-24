@@ -1,10 +1,12 @@
 var NetDef = require('NetDef')
+var UserData = require('UserData')
+var DialogManager = require('DialogManager')
+var GameManager = require('GameManager')
 
 cc.Class({
     extends: cc.Component,
 
     properties: {
-        statuLabel: cc.Label
     },
 
     // use this for initialization
@@ -14,16 +16,23 @@ cc.Class({
         }
 
         this.socket = null;
-        this.statuLabel.string = "connecting";
-        this.initConnection();
+        this.dialogManager = this.node.getComponent(DialogManager);
+        this.gameManager = this.node.getComponent(GameManager);
+//        this.startConnection();
     },
 
-    initConnection: function() {
+    startConnection: function() {
         let self = this;
         this.socket = io('http://localhost:3000');
         this.socket.on('response', function(msg){
             self.onResponse(msg);
+            if(self.msgDialog){
+                self.msgDialog.setMessage("连接成功！");
+                self.msgDialog.setOkBtnActive(true);
+            }
+            self.gameManager.enterMainPanel();
         });
+        this.msgDialog = this.dialogManager.showMessage("正在连接...");
     },
 
     onResponse: function(msg){
@@ -31,7 +40,6 @@ cc.Class({
         var res = JSON.parse(msg);
         switch(res.actionType){
         case NetDef.Response.CONNECTED:
-            this.statuLabel.string = res.string;
             break;
         default:
             console.log("unknown action");
