@@ -1,5 +1,5 @@
 var StringUtil = require('StringUtil')
-var Connection = require('Connection')
+var Net = require('Net')
 var UserData = require('UserData')
 
 cc.Class({
@@ -8,7 +8,8 @@ cc.Class({
     properties: {
         btnConfirm: cc.Button,
         nickEditBox: cc.EditBox,
-        conn: Connection
+        dialogManager: require('DialogManager'),
+        gameManager: require('GameManager')
     },
 
     // use this for initialization
@@ -30,6 +31,17 @@ cc.Class({
         var text = StringUtil.trim(this.nickEditBox.string);
         this.nickEditBox.string = text;
         UserData.nickName = text;
-        this.conn.startConnection();
+
+        this.btnConfirm.interactable = false;
+        var self = this;
+        Net.login(function(data){
+			if(data.error) {
+//				showError("username exists!");
+                self.dialogManager.showMessageWithOk("username exists!");
+                self.btnConfirm.interactable = true;
+				return;
+			}
+            self.gameManager.enterMainPanel();
+        });
     },
 });

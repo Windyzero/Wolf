@@ -80,7 +80,7 @@
         "__id__": 19
       },
       {
-        "__id__": 35
+        "__id__": 34
       }
     ],
     "_rotationX": 0,
@@ -102,7 +102,7 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 36
+        "__id__": 35
       }
     ],
     "_prefab": null,
@@ -332,9 +332,9 @@
     "_N$placeholderFontSize": 50,
     "_N$placeholderFontColor": {
       "__type__": "cc.Color",
-      "r": 127.5,
-      "g": 127.5,
-      "b": 127.5,
+      "r": 127,
+      "g": 127,
+      "b": 127,
       "a": 255
     },
     "_N$maxLength": 8,
@@ -589,18 +589,27 @@
     "nickEditBox": {
       "__id__": 7
     },
-    "conn": {
+    "dialogManager": {
       "__id__": 16
+    },
+    "gameManager": {
+      "__id__": 18
     }
   },
   {
-    "__type__": "68f1a4fYedFj7nrd0+e8SCm",
+    "__type__": "e1983w8YchK7r/WXQc9GTtZ",
     "_name": "",
     "_objFlags": 0,
     "node": {
       "__id__": 17
     },
-    "_enabled": true
+    "_enabled": true,
+    "topPanel": {
+      "__id__": 34
+    },
+    "dialogPrefab": {
+      "__uuid__": "f7d85fd6-dd9f-49b9-a18f-a7c8b4f0cad9"
+    }
   },
   {
     "__type__": "cc.Node",
@@ -648,13 +657,10 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 16
-      },
-      {
         "__id__": 18
       },
       {
-        "__id__": 34
+        "__id__": 16
       }
     ],
     "_prefab": null,
@@ -814,6 +820,7 @@
     },
     "_enabled": true,
     "isAlignOnce": true,
+    "_target": null,
     "_alignFlags": 1,
     "_left": -48.935,
     "_right": 0,
@@ -1127,9 +1134,9 @@
     "_N$placeholderFontSize": 20,
     "_N$placeholderFontColor": {
       "__type__": "cc.Color",
-      "r": 127.5,
-      "g": 127.5,
-      "b": 127.5,
+      "r": 127,
+      "g": 127,
+      "b": 127,
       "a": 255
     },
     "_N$maxLength": 140,
@@ -1205,21 +1212,6 @@
     },
     "contentLabel": {
       "__id__": 26
-    }
-  },
-  {
-    "__type__": "e1983w8YchK7r/WXQc9GTtZ",
-    "_name": "",
-    "_objFlags": 0,
-    "node": {
-      "__id__": 17
-    },
-    "_enabled": true,
-    "topPanel": {
-      "__id__": 35
-    },
-    "dialogPrefab": {
-      "__uuid__": "f7d85fd6-dd9f-49b9-a18f-a7c8b4f0cad9"
     }
   },
   {

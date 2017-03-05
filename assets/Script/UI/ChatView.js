@@ -1,5 +1,6 @@
 var StringUtil = require('StringUtil');
 var UserData = require('UserData');
+var Net = require('Net');
 
 cc.Class({
     extends: cc.Component,
@@ -19,13 +20,16 @@ cc.Class({
         var text = StringUtil.trim(editbox.string);
         editbox.string = "";
         if(text.length > 0){
-            var str = this.contentLabel.string;
-            str +=  UserData.nickName + " 说： \n" + text + "\n";
-            this.contentLabel.string = str;
-            if(this.contentLabel.node.height > 540){
-                this.contentView.height = this.contentLabel.node.height + 10;
-                this.contentLabel.node.y = this.contentLabel.node.height + 5;
-            }
+            var self = this;
+            Net.sendMsg(text, "*", function(data) {
+                var str = self.contentLabel.string;
+                str +=  UserData.nickName + " 说： \n" + text + "\n";
+                self.contentLabel.string = str;
+                if(self.contentLabel.node.height > 540){
+                    self.contentView.height = self.contentLabel.node.height + 10;
+                    self.contentLabel.node.y = self.contentLabel.node.height + 5;
+                }
+	        });
         }
     }
 });
