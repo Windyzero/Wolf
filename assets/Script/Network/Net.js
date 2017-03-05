@@ -3,36 +3,6 @@ var Net = {};
 
 var rid = "1000";
 
-//wait message from the server.
-pomelo.on('onChat', function(data) {
-	// addMessage(data.from, data.target, data.msg);
-	// $("#chatHistory").show();
-	// 	if(data.from !== username)
-	// 		tip('message', data.from);
-    console.log("onChat: " + data.msg);
-});
-
-//update user list
-pomelo.on('onAdd', function(data) {
-	// var user = data.user;
-	// tip('online', user);
-	// addUser(user);
-    console.log("onAdd: ", data.user);
-});
-
-//update user list
-pomelo.on('onLeave', function(data) {
-	// var user = data.user;
-	// tip('offline', user);
-	// removeUser(user);
-    console.log("onLeave: ", data.user);
-});
-
-//handle disconect message, occours when the client is disconnect with servers
-pomelo.on('disconnect', function(reason) {
-	console.log("disconect with servers");
-});
-
 Net.queryEntry = function(uid, callback) {
 	var route = 'gate.gateHandler.queryEntry';
     pomelo.init({

@@ -8,28 +8,31 @@ cc.Class({
     properties: {
         contentView: cc.Node,
         contentLabel: cc.Label,
+        handler: require('NotifyHandler')
     },
 
     // use this for initialization
     onLoad: function () {
-
+        this.handler.node.on("onChat", this._onChat, this);
     },
 
-    onEditingReturn: function(editbox,  customEventData) {
+    onEditingReturn: function (editbox, customEventData) {
         //这里 editbox 是一个 cc.EditBox 对象
         var text = StringUtil.trim(editbox.string);
         editbox.string = "";
-        if(text.length > 0){
-            var self = this;
-            Net.sendMsg(text, "*", function(data) {
-                var str = self.contentLabel.string;
-                str +=  UserData.nickName + " 说： \n" + text + "\n";
-                self.contentLabel.string = str;
-                if(self.contentLabel.node.height > 540){
-                    self.contentView.height = self.contentLabel.node.height + 10;
-                    self.contentLabel.node.y = self.contentLabel.node.height + 5;
-                }
-	        });
+        if (text.length > 0) {
+            Net.sendMsg(text, "*", function (data) { });
+        }
+    },
+
+    _onChat: function (event) {
+        var data = event.detail.data;
+        var str = this.contentLabel.string;
+        str += data.from + " 说： \n" + data.msg + "\n";
+        this.contentLabel.string = str;
+        if (this.contentLabel.node.height > 540) {
+            this.contentView.height = this.contentLabel.node.height + 10;
+            this.contentLabel.node.y = this.contentLabel.node.height + 5;
         }
     }
 });
